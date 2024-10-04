@@ -53,7 +53,7 @@ class FlutterVideoThumbnailPlugin: FlutterPlugin, MethodCallHandler {
         // Extract frames every second (1 second = 1,000,000 microseconds)
         val frameInterval = 1_000_000L
         for (time in 0..duration * 1000 step frameInterval) {
-            val bitmap = retriever.getFrameAtTime(time, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
+            val bitmap = retriever.getFrameAtTime(time, MediaMetadataRetriever.OPTION_CLOSEST)
             if (bitmap != null) {
                 val filePath = saveBitmap(bitmap)
                 filePaths.add(filePath)
